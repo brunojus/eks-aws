@@ -50,7 +50,7 @@ resource "aws_iam_role_policy_attachment" "cluster_AmazonEKSClusterPolicy" {
 resource "aws_security_group" "eks_cluster" {
   name        = "${var.project}-cluster-sg"
   description = "Cluster communication with worker nodes"
-  vpc_id      = aws_vpc.this.id
+  vpc_id      = "vpc-037e69145359d23da"
 
   tags = {
     Name = "${var.project}-cluster-sg"
