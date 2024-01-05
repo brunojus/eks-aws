@@ -2,9 +2,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: nginx-2048-ingress
-  annotations:
-    kubernetes.io/ingress.class: nginx
 spec:
+  ingressClassName: nginx
   rules:
   - host: ac211656fed9a4ea88462f0b2e7e7278-54709836.eu-central-1.elb.amazonaws.com
     http:
