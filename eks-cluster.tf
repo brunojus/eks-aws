@@ -5,12 +5,10 @@ resource "aws_eks_cluster" "this" {
   version  = "1.27"
 
   vpc_config {
-    # security_group_ids      = [aws_security_group.eks_cluster.id, aws_security_group.eks_nodes.id] # already applied to subnet
     subnet_ids              = var.subnets
     endpoint_private_access = true
     endpoint_public_access  = true
     public_access_cidrs     = ["0.0.0.0/0"]
-    vpc_id                  = "vpc-037e69145359d23da"
   }
 
 
