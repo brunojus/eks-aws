@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: service-2048
 spec:
-  ports:
-    - port: 80
-      targetPort: 80
-      protocol: TCP
-  type: NodePort
+  type: LoadBalancer
   selector:
-    app.kubernetes.io/name: app-2048
+    app: app-2048  # Adjust the selector based on your application labels
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
